@@ -4,7 +4,7 @@
 
   class MainController {
 
-    constructor($http) {
+    constructor($http,$mdSidenav) {
       this.$http = $http;
       this.awesomeThings = [];
     }
