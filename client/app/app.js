@@ -4,7 +4,7 @@ angular.module('maerkApp', ['maerkApp.auth', 'maerkApp.admin', 'maerkApp.constan
     'ngResource', 'ngSanitize', 'ui.router', 'validation.match', 'ngMaterial'
   ])
   .config(function($urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
 
     $locationProvider.html5Mode(true);
   });

@@ -20,3 +20,10 @@ class NavbarController {
 
 angular.module('maerkApp')
   .controller('NavbarController', NavbarController);
+
+
+  angular.module('toolbarDemo1', ['ngMaterial'])
+
+.controller('NavbarController', function($scope) {
+
+});
