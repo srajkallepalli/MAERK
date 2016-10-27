@@ -27,7 +27,7 @@
        </md-menu-item>
        <md-menu-item>
          <md-button>
-           Client
+           Clients
          </md-button>
        </md-menu-item>
        <md-menu-divider></md-menu-divider>
@@ -42,37 +42,8 @@
  </md-list-item>
 
 
-          <md-list-item ng-click="null">
-            <p> Employee </p>
-            <!-- <md-menu class="md-secondary">
-              <md-button class="md-icon-button">
-                <md-icon md-svg-icon="communication:message"></md-icon>
-              </md-button>
-              <md-menu-content width="4">
-                <md-menu-item>
-                  <md-button>
-                    Activate/DeActivate
-                  </md-button>
-                </md-menu-item>
-                <md-menu-item>
-                  <md-button>
-                    Add
-                  </md-button>
-                </md-menu-item>
-                <md-menu-divider></md-menu-divider>
-                <md-menu-item>
-                  <md-button>
-                    Edit
-                  </md-button>
-                </md-menu-item>
-                <md-menu-divider></md-menu-divider>
-                <md-menu-item>
-                  <md-button>
-                    Delete
-                  </md-button>
-                </md-menu-item>
-              </md-menu-content>
-            </md-menu> -->
+          <md-list-item ui-sref=".employees">
+            Employees
           </md-list-item>
           <md-list-item  ng-click="null">
             <p> Recruiter </p>
@@ -80,6 +51,8 @@
           <md-list-item  ng-click="null">
             <p> Register Quarter </p>
           </md-list-item>
-        </md-list>
       </md-content>
     </md-sidenav>
+              <div flex ui-view>
+              Hello
+            </div>
