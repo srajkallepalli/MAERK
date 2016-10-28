@@ -11,20 +11,16 @@
                 {{(filteredItems = (employeeList | filter: filterID))}}
             </div>
         </md-card>
-  <mdt-table table-card="{visible: true, title: 'Nutritions', columnSelector: true}"
+  <mdt-table table-card="{visible: true, title: 'Employees', columnSelector: true}"
              selectable-rows="true"
-             alternate-headers="'contextual'"
+
 
              delete-row-callback="deleteRowCallback(rows)"
-             edit-row-callback="editRowCallback(rows)"
-
-
-             table-card="{visible: true, title: 'Employees', columnSelector: true}"
+             save-row-callback="saveRowCallback(row)"
              alternate-headers="'contextual'"
              paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"
              selected-row-callback="selectedRowCallback(rows)"
-
-             <mdt-table animate-sort-icon="true"
+             animate-sort-icon="true"
 
             mdt-row="{
                       'data': filteredItems,
@@ -32,7 +28,7 @@
                       'column-keys': ['id', 'firstName', 'lastName', 'client', 'skills', 'recruiter', 'revenue']
                       }">
     <mdt-header-row >
-      <mdt-column column-sort="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column>
+      <mdt-column column-sort="true" contenteditable="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column>
       <mdt-column column-sort="true" align-rule="left">First Name</mdt-column>
       <mdt-column column-sort="true" align-rule="left">Last Name</mdt-column>
       <mdt-column column-sort="true" align-rule="left">Client</mdt-column>
@@ -41,4 +37,5 @@
       <mdt-column column-sort="true" align-rule="left">Revenue</mdt-column>
     </mdt-header-row>
   </mdt-table>
+
 </div>
