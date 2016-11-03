@@ -11,9 +11,11 @@
                 {{(filteredItems = (employeeList | filter: filterID))}}
             </div>
         </md-card>
+
+        <md-button class="md-raised md-primary" ng-click="showAdvanced($event)">Add Employee</md-button>
+
   <mdt-table table-card="{visible: true, title: 'Employees', columnSelector: true}"
              selectable-rows="true"
-
 
              save-row-callback="saveRowCallback(rows)"
              delete-row-callback="deleteRowCallback(rows)"
@@ -27,6 +29,7 @@
                       'table-row-id-key': 'id',
                       'column-keys': ['id', 'firstName', 'lastName', 'client', 'skills', 'recruiter', 'revenue']
                       }">
+
     <mdt-header-row >
       <mdt-column column-sort="true" contenteditable="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column>
       <mdt-column column-sort="true" align-rule="left">First Name</mdt-column>

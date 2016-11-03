@@ -1,9 +1,10 @@
 (function(){
     'use strict';
 
-    angular.module('maerkApp')
-      .controller('EmployeesController', function($scope, $mdToast){
 
+
+    angular.module('maerkApp')
+      .controller('EmployeesController', function($scope, $mdToast, $mdDialog){
         $scope.employeeList = [
             {
                 id: 1,
@@ -96,5 +97,25 @@
                 revenue: 9800
             }
         ];
+
+        $scope.showAdvanced = function(ev) {
+          $mdDialog.show({
+            controller: 'AddController',
+            templateUrl: 'app/main/employees/add/emp.dialog.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose:true,
+            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+          })
+          .then(function(answer) {
+            $scope.status = 'You said the information was "' + answer + '".';
+          }, function() {
+            $scope.status = 'You cancelled the dialog.';
+        })
+      }
+
+
     });
-}());
+
+
+})();

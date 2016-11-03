@@ -45,11 +45,11 @@
     <img src="ksquare.png">
     <span flex></span>
 
-    <md-button class="md-raised" ng-show="nav.isLoggedIn()" md-nav-sref="logout" ui-sref="logout">
+    <md-button ng-show="nav.isLoggedIn()" md-nav-sref="logout" ui-sref="logout">
       Log out
       <!-- <md-tooltip>Get the F**k outta here</md-tooltip> -->
     </md-button>
-    <md-button class="md-icon-button" aria-label="Custom Icon Button" layout="center center" layout="column" ui-sref-active="active" ui-sref="settings">
+    <md-button class="md-icon-button" ng-show="nav.isLoggedIn()" aria-label="Custom Icon Button" layout="center center" layout="column" ui-sref-active="active" ui-sref="settings">
       <!-- <md-tooltip>Change Password </md-tooltip> -->
       <i class="material-icons">settings</i>
     </md-button>

@@ -15,4 +15,11 @@ angular.module('maerkApp')
         controllerAs:'vm',
         authenticate: true
       })
+
+      .state("main.skills",{
+     url:"/skills",
+     templateUrl:"app/main/skills/skills.html",
+     controller:'skillsController',
+     controllerAs:'ctrl'
+   })
   });
