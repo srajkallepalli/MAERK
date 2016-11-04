@@ -1,35 +1,41 @@
-
-  <md-content layout-padding flex>
+<md-dialog aria-label="Mango (Fruit)" flex="70">
+  <md-content flex="100">
     <form name="projectForm">
-
-      <md-input-container class="md-block">
-        <h2>Employee Details</h2>
-        <!-- <input md-maxlength="30" required md-no-asterisk name="description" ng-model="project.description">
-        <div ng-messages="projectForm.description.$error">
-          <div ng-message="required">This is required.</div>
-          <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
-        </div> -->
-      </md-input-container>
-      <div layout="row">
-        <md-input-container flex="50">
-          <label>First Name</label>
-          <input required name="clientFirstName" ng-model="project.clientFirstName">
-          <div ng-messages="projectForm.clientFirstName.$error">
-            <div ng-message="required">This is required.</div>
+      <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2>Employee Details</h2>
+            <span flex></span>
           </div>
-        </md-input-container>
-
-        <md-input-container flex="50">
-          <label>Last Name</label>
-          <input required name="clientLastName" ng-model="project.clientLastName">
-          <!-- <md-option value="app">Application</md-option>
-          <md-option value="web">Website</md-option> -->
-          <div ng-messages="projectForm.clientLastName.$error">
+        </md-toolbar>
+      <!-- <md-input-container class="md-block">
+        <h2>/h2>
+        <!-- <input md-maxlength="30" required md-no-asterisk name="description" ng-model="project.description">
+          <div ng-messages="projectForm.description.$error">
             <div ng-message="required">This is required.</div>
-
+            <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
+          </div> -->
+      <!-- </md-input-container> -->
+       <md-dialog-content>
+        <div layout="row">
+          <md-input-container flex="50">
+            <label>First Name</label>
+            <input required name="clientFirstName" ng-model="project.clientFirstName">
+            <div ng-messages="projectForm.clientFirstName.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
           </md-input-container>
+
+          <md-input-container flex="50">
+            <label>Last Name</label>
+            <input required name="clientLastName" ng-model="project.clientLastName">
+            <!-- <md-option value="app">Application</md-option>
+              <md-option value="web">Website</md-option> -->
+            <div ng-messages="projectForm.clientLastName.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+
         </div>
-      </div>
 
         <div layout="row">
           <md-input-container flex="50">
@@ -44,12 +50,12 @@
             <label>Skill</label>
             <input required name="clientLastName" ng-model="project.clientLastName">
             <!-- <md-option value="app">Application</md-option>
-            <md-option value="web">Website</md-option> -->
+                <md-option value="web">Website</md-option> -->
             <div ng-messages="projectForm.clientLastName.$error">
               <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
 
         <div layout="row">
@@ -61,15 +67,14 @@
             </div>
           </md-input-container>
 
-            <md-input-container flex="50">
-          <label>Placement Type</label>
-          <md-select name="type" ng-model="placement.type" required>
-            <md-option value="app">Full Time</md-option>
-            <md-option value="web">Part Time</md-option>
-            <md-option value="web">Project</md-option>
-          </md-select>
-        </md-input-container>
-          </div>
+          <md-input-container flex="50">
+            <label>Placement Type</label>
+            <md-select name="type" ng-model="placement.type" required>
+              <md-option value="Full Time">Full Time</md-option>
+              <md-option value="Part Time">Part Time</md-option>
+              <md-option value="Project">Project</md-option>
+            </md-select>
+          </md-input-container>
         </div>
 
 
@@ -87,9 +92,9 @@
             <input required name="clientLastName" ng-model="project.clientLastName">
             <div ng-messages="projectForm.clientLastName.$error">
               <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
 
 
@@ -107,9 +112,9 @@
             <input required name="clientLastName" ng-model="project.clientLastName">
             <div ng-messages="projectForm.clientLastName.$error">
               <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
 
 
@@ -127,9 +132,9 @@
             <input required name="clientLastName" ng-model="project.clientLastName">
             <div ng-messages="projectForm.clientLastName.$error">
               <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
 
 
@@ -147,8 +152,10 @@
             <input required name="clientLastName" ng-model="project.clientLastName">
             <div ng-messages="projectForm.clientLastName.$error">
               <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
-      </md-content>
+      <md-dialog-content>
+  </md-content>
+</md-dialog>
