@@ -1,7 +1,7 @@
 'use strict';
 
 import _ from 'lodash';
-import employee from './employee.model';
+import Employee from './employee.model';
 
 function respondWithResult(res, statusCode) {
  statusCode = statusCode || 200;
@@ -40,11 +40,22 @@ function handleError(res, statusCode) {
  };
 }
 
+export function index(req, res) {
+  return Employee.find().exec()
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
 
+export function show(req, res) {
+ return Employee.findById(req.params.id).exec()
+   .then(handleEntityNotFound(res))
+   .then(respondWithResult(res))
+   .catch(handleError(res));
+}
 
 // Creates a new employee in the DB
 export function create(req, res) {
- return employee.create(req.body)
+ return Employee.create(req.body)
    .then(respondWithResult(res, 201))
    .catch(handleError(res));
 }
@@ -54,7 +65,7 @@ export function update(req, res) {
  if (req.body._id) {
    delete req.body._id;
  }
- return employee.findById(req.params.id).exec()
+ return Employee.findById(req.params.id).exec()
    .then(handleEntityNotFound(res))
    .then(saveUpdates(req.body))
    .then(respondWithResult(res))
