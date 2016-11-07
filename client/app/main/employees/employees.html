@@ -1,38 +1,53 @@
-<!-- ng-app="exampleApp6" ng-controller="ExampleController6" -->
-<div  layout-margin>
 
-  <md-card style="margin:0px">
-            <md-input-container style="margin:15px;">
-                <label>Filter by search</label>
-                <input type="text" ng-model="filterID">
-            </md-input-container>
+<div layout-margin>
 
-            <div ng-hide="true">
-                {{(filteredItems = (employeeList | filter: filterID))}}
-            </div>
-        </md-card>
-  <mdt-table table-card="{visible: true, title: 'Nutritions', columnSelector: true}"
-             selectable-rows="true"
-             alternate-headers="'contextual'"
+  <md-toolbar>
+    <div class="md-toolbar-tools">
 
-             delete-row-callback="deleteRowCallback(rows)"
-             edit-row-callback="editRowCallback(rows)"
+      <md-input-container  md-no-float class="md-accent" flex="50" style="padding-bottom:0px;margin-left:25px">
+        <md-icon style="color:wheat" class="material-icons">&#xE8B6;</md-icon>
+        <input ng-model="filterID" placeholder="Search here" style="color:wheat;padding-left:25px;margin-left:5px">
+        <div ng-hide="true">
+          {{(filteredItems = (employeeList | filter: filterID))}}
+        </div>
+      </md-input-container>
+      <span flex></span>
+
+      <md-button class="md-icon-button" aria-label="User" ng-show="showEdit">
+        <md-tooltip>Edit</md-tooltip>
+        <i class="material-icons">mode_edit</i>
+      </md-button>
 
 
-             table-card="{visible: true, title: 'Employees', columnSelector: true}"
-             alternate-headers="'contextual'"
-             paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20,50]}"
-             selected-row-callback="selectedRowCallback(rows)"
+      <md-button class="md-icon-button" aria-label="" ng-show="showDelete" ng-click="showDelete($event)">
+        <md-tooltip>Delete</md-tooltip>
+        <i class="material-icons">delete</i>
+      </md-button>
 
-             <mdt-table animate-sort-icon="true"
+      <md-button class="md-primary md-raised" ng-click="showConfirm($event)" >
+      De Activate
+    </md-button>
+    </div>
+  </md-toolbar>
 
-            mdt-row="{
+
+  <md-button class="md-raised md-primary" ng-click="showAdvanced($event)" ><i class="material-icons">person_add</i></md-button>
+
+
+  <mdt-table
+
+  paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
+  selected-row-callback="selectedRowCallback(rows)"
+  animate-sort-icon="true"
+  selectable-rows="true"
+  mdt-row="{
                       'data': filteredItems,
                       'table-row-id-key': 'id',
                       'column-keys': ['id', 'firstName', 'lastName', 'client', 'skills', 'recruiter', 'revenue']
                       }">
-    <mdt-header-row >
-      <mdt-column column-sort="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column>
+
+    <mdt-header-row>
+      <mdt-column column-sort="true" contenteditable="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column>
       <mdt-column column-sort="true" align-rule="left">First Name</mdt-column>
       <mdt-column column-sort="true" align-rule="left">Last Name</mdt-column>
       <mdt-column column-sort="true" align-rule="left">Client</mdt-column>
@@ -40,5 +55,7 @@
       <mdt-column column-sort="true" align-rule="left">Recruiter</mdt-column>
       <mdt-column column-sort="true" align-rule="left">Revenue</mdt-column>
     </mdt-header-row>
+
   </mdt-table>
+
 </div>

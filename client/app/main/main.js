@@ -5,12 +5,21 @@ angular.module('maerkApp')
     $stateProvider
     .state('main', {
       url: '/dashboard',
-      template: '<main class="flex layout-column"></main>'
+      template: '<main class="flex layout-column"></main>',
+      authenticate: true
     })
       .state('main.employees', {
         url: "/employees",
         templateUrl: 'app/main/employees/employees.html',
-        controller:'EmployeesController',
-         controllerAs:'vm'
+        controller:"EmployeesController",
+        controllerAs:'vm',
+        authenticate: true
       })
+
+      .state("main.skills",{
+     url:"/skills",
+     templateUrl:"app/main/skills/skills.html",
+     controller:'skillsController',
+     controllerAs:'ctrl'
+   })
   });
