@@ -5,64 +5,73 @@ import mongoose from 'mongoose';
 var employeeSchema = new mongoose.Schema({
    first_name: {
    type : String,
-   require: true;
-   };
+   require: true
+ },
+
    last_name: {
    type : String,
-   require: true;
-   };
+   require: true
+ },
+
    client: {
    type : String,
-   require: true;
-   };
+   require: true
+ },
+
    skills: {
    type : String,
-   require: true;
-   };
+   require: true
+ },
    recruiter: {
    type : String,
-   require: true;
-   };
+   require: true
+ },
+
    placement_type: {
    type : String,
-   require: true;
-   };
-   first_name: {
+   require: true
+ },
+
+   salary: {
    type : String,
-   require: true;
-   };
-   first_name: {
+   require: true
+ },
+
+   insurance: {
    type : String,
-   require: true;
-   };
-   first_name: {
+   require: true
+ },
+
+   relocation: {
    type : String,
-   require: true;
-   };
-   first_name: {
+   require: true
+ },
+
+   immigration: {
    type : String,
-   require: true;
-   };first_name: {
+   require: true
+ },
+
+   pay_vacation_cost: {
    type : String,
-   require: true;
-   };
-   first_name: {
+   require: true
+ },
+
+   ksquare_hourly_cost: {
    type : String,
-   require: true;
-   };
-   first_name: {
+   require: true
+ },
+
+   target_bill_rate: {
    type : String,
-   require: true;
-   };
-   first_name: {
+   require: true
+ },
+
+   client_bill_pay: {
    type : String,
-   require: true;
-   };
-   first_name: {
-   type : String,
-   require: true;
-   };
+   require: true
+ },
 
 });
 
-export default mongoose.model('employee', employeeSchema);
+export default mongoose.model('Employee', employeeSchema);

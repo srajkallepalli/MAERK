@@ -19,19 +19,33 @@
       </md-button>
 
 
-      <md-button class="md-icon-button" aria-label="" ng-show="showDelete" ng-click="showDelete($event)">
+      <md-button class="md-icon-button" aria-label="" ng-show="showOptions" ng-click="showDelete($event)">
         <md-tooltip>Delete</md-tooltip>
         <i class="material-icons">delete</i>
       </md-button>
 
-      <md-button class="md-primary md-raised" ng-click="showConfirm($event)" >
-      De Activate
-    </md-button>
+
+    <md-menu >
+      <md-button aria-label="Open demo menu" ng-show="showOptions" ng-click="$mdOpenMenu($event)">
+          Status
+      </md-button>
+      <md-menu-content width="4">
+        <md-menu-item >
+          <md-button ng-click="">
+            <span md-menu-align-target>Activate</span> </md-button>
+        </md-menu-item>
+        <md-menu-item >
+          <md-button ng-click="showConfirm($event)">
+            <span md-menu-align-target>Deactivate</span> </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
     </div>
   </md-toolbar>
 
 
-  <md-button class="md-raised md-primary" ng-click="showAdvanced($event)" ><i class="material-icons">person_add</i></md-button>
+  <md-button class="md-raised md-primary" ng-click="showAdvanced($event)"><i class="material-icons">person_add</i></md-button>
 
 
   <mdt-table
