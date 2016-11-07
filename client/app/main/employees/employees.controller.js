@@ -136,26 +136,30 @@
         })
       }
 
-      $scope.showEdit = false;
+      // $scope.deleteRowCallback = function(rows){
+      //       $mdToast.show(
+      //           $mdToast.simple()
+      //               .content('Deleted row id(s): '+rows)
+      //               .hideDelay(3000)
+      //       );
+      //   };
 
-      $scope.showStatus = false;
+      $scope.showEdit = false;
+      $scope.showOptions = false;
 
       $scope.selectedRowCallback = function(rows) {
 
         if (rows == 0) {
           $scope.showEdit = false;
-          // $scope.showDelete = false;
-          $scope.showStatus = false;
+          $scope.showOptions = false;
           console.log("0 rows selected");
         } else if (rows.length == 1) {
           $scope.showEdit = true;
-          // $scope.showDelete = true;
-          $scope.showStatus = true;
+          $scope.showOptions = true;
           console.log("1 row selected");
         } else {
           $scope.showEdit = false;
-          // $scope.showDelete = true;
-          $scope.showStatus = true;
+          $scope.showOptions = true;
           console.log('nothing selected')
           console.log(rows);
         }
