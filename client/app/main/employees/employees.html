@@ -1,0 +1,44 @@
+<!-- ng-app="exampleApp6" ng-controller="ExampleController6" -->
+<div  layout-margin>
+
+  <md-card style="margin:0px">
+            <md-input-container style="margin:15px;">
+                <label>Filter by search</label>
+                <input type="text" ng-model="filterID">
+            </md-input-container>
+
+            <div ng-hide="true">
+                {{(filteredItems = (employeeList | filter: filterID))}}
+            </div>
+        </md-card>
+
+        <md-button class="md-raised md-primary" ng-click="showAdvanced($event)">Add Employee</md-button>
+
+  <mdt-table table-card="{visible: true, title: 'Employees', columnSelector: true}"
+             selectable-rows="true"
+
+             save-row-callback="saveRowCallback(rows)"
+             delete-row-callback="deleteRowCallback(rows)"
+             alternate-headers="'contextual'"
+             paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
+             selected-row-callback="selectedRowCallback(rows)"
+             animate-sort-icon="true"
+
+            mdt-row="{
+                      'data': filteredItems,
+                      'table-row-id-key': 'id',
+                      'column-keys': ['id', 'firstName', 'lastName', 'client', 'skills', 'recruiter', 'revenue']
+                      }">
+
+    <mdt-header-row >
+      <mdt-column column-sort="true" contenteditable="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column>
+      <mdt-column column-sort="true" align-rule="left">First Name</mdt-column>
+      <mdt-column column-sort="true" align-rule="left">Last Name</mdt-column>
+      <mdt-column column-sort="true" align-rule="left">Client</mdt-column>
+      <mdt-column column-sort="true" align-rule="left">Skills</mdt-column>
+      <mdt-column column-sort="true" align-rule="left">Recruiter</mdt-column>
+      <mdt-column column-sort="true" align-rule="left">Revenue</mdt-column>
+    </mdt-header-row>
+  </mdt-table>
+
+</div>

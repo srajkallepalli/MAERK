@@ -1,0 +1,58 @@
+<!-- <br>
+
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Toolbar with Disabled/Enabled Icon Buttons</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <br> -->
+
+<!-- <md-toolbar>
+      <div class="md-toolbar-tools">
+        <img src="ksquare.png">
+        <span flex></span>
+        <md-button class="md-raised" aria-label="Learn More">
+          Logout
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Favorite">
+          <!-- <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon> -->
+<!-- <md-icon md-font-icon="classname" /> -->
+<!-- <i class="material-icons">accessibility</i> -->
+<!-- </md-button> -->
+<!-- </div> -->
+</md-toolbar>
+
+<md-toolbar class="md-padding">
+
+  <div ng-cloak layout="row" md-is-locked-open="gt-md">
+      <md-button ng-show="nav.isLoggedIn()" class="md-icon-button" aria-label="Side Panel" ng-click="nav.openLeftSidenav()" hide-gt-md>
+      <!-- <md-tooltip>Side Panel</md-tooltip> -->
+      <md-icon class="md-default-theme" class="material-icons">&#xE5D2;</md-icon>
+    </md-button>
+    <img src="ksquare.png">
+    <span flex></span>
+
+    <md-button ng-show="nav.isLoggedIn()" md-nav-sref="logout" ui-sref="logout">
+      Log out
+      <!-- <md-tooltip>Get the F**k outta here</md-tooltip> -->
+    </md-button>
+    <md-button class="md-icon-button" ng-show="nav.isLoggedIn()" aria-label="Custom Icon Button" layout="center center" layout="column" ui-sref-active="active" ui-sref="settings">
+      <!-- <md-tooltip>Change Password </md-tooltip> -->
+      <i class="material-icons">settings</i>
+    </md-button>
+  </div>
+
+</md-toolbar>
