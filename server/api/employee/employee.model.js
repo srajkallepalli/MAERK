@@ -5,72 +5,76 @@ import mongoose from 'mongoose';
 var employeeSchema = new mongoose.Schema({
    first_name: {
    type : String,
-   require: true
+   required: true
  },
 
    last_name: {
    type : String,
-   require: true
+   required: true
  },
 
    client: {
    type : String,
-   require: true
+   required: true
  },
 
    skills: {
    type : String,
-   require: true
+   required: true
  },
    recruiter: {
    type : String,
-   require: true
+   required: true
  },
 
    placement_type: {
    type : String,
-   require: true
+   required: true
  },
 
    salary: {
-   type : String,
-   require: true
+   type : Number,
+   required: true
  },
 
    insurance: {
-   type : String,
-   require: true
+   type : Number,
+   required: true
  },
 
    relocation: {
-   type : String,
-   require: true
+   type : Number,
+   required: true
  },
 
    immigration: {
-   type : String,
-   require: true
+   type : Number,
+   required: true
  },
 
    pay_vacation_cost: {
-   type : String,
-   require: true
+   type : Number,
+   required: true
  },
 
    ksquare_hourly_cost: {
-   type : String,
-   require: true
+   type : Number,
+   required: true
  },
 
    target_bill_rate: {
-   type : String,
-   require: true
+   type : Number,
+   required: true
  },
 
    client_bill_pay: {
-   type : String,
-   require: true
+   type : Number,
+   required: true
  },
+    activate:{
+      type:Boolean,
+      default:true
+    }
 
 });
 

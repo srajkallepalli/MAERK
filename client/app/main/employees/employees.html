@@ -56,18 +56,18 @@
   selectable-rows="true"
   mdt-row="{
                       'data': filteredItems,
-                      'table-row-id-key': 'id',
-                      'column-keys': ['id', 'firstName', 'lastName', 'client', 'skills', 'recruiter', 'revenue']
+                      'table-row-id-key': '_id',
+                      'column-keys': [ 'first_name', 'last_name', 'client', 'skills', 'recruiter']
                       }">
 
     <mdt-header-row>
-      <mdt-column column-sort="true" contenteditable="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column>
+      <!-- <mdt-column column-sort="true" contenteditable="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column> -->
       <mdt-column column-sort="true" align-rule="left">First Name</mdt-column>
       <mdt-column column-sort="true" align-rule="left">Last Name</mdt-column>
       <mdt-column column-sort="true" align-rule="left">Client</mdt-column>
       <mdt-column column-sort="true" align-rule="left">Skills</mdt-column>
       <mdt-column column-sort="true" align-rule="left">Recruiter</mdt-column>
-      <mdt-column column-sort="true" align-rule="left">Revenue</mdt-column>
+      <!-- <mdt-column column-sort="true" align-rule="left">Revenue</mdt-column> -->
     </mdt-header-row>
 
   </mdt-table>
