@@ -69,7 +69,7 @@ User.find({}).remove()
        "Verizon",
        "NTTData"
      ],
-     "skill": [
+     "skills": [
        "JS Developer",
        "Business Analyst"
      ],
@@ -92,7 +92,7 @@ User.find({}).remove()
        "Salesforce",
        "Google"
      ],
-     "skill": [
+     "skills": [
        "Salesforce Developer",
        "UI Designer"
      ],
@@ -115,7 +115,7 @@ User.find({}).remove()
        "Yahoo",
        "Twitter"
      ],
-     "skill": [
+     "skills": [
        "UX Developer",
        "Automation tester"
      ],
@@ -138,7 +138,7 @@ User.find({}).remove()
        "Shufflester",
        "Yodo"
      ],
-     "skill": [
+     "skills": [
        "JavaSE",
        "Knowledge Sharing"
      ],
@@ -161,7 +161,7 @@ User.find({}).remove()
        "Shufflester",
        "Yodo"
      ],
-     "skill": [
+     "skills": [
        "JavaSE",
        "Knowledge Sharing"
      ],
@@ -184,7 +184,7 @@ User.find({}).remove()
        "Shufflester",
        "Yodo"
      ],
-     "skill": [
+     "skills": [
        "JavaSE",
        "Knowledge Sharing"
      ],
@@ -207,7 +207,7 @@ User.find({}).remove()
        "Shufflester",
        "Yodo"
      ],
-     "skill": [
+     "skills": [
        "JavaSE",
        "Knowledge Sharing"
      ],
@@ -230,7 +230,7 @@ User.find({}).remove()
        "Shufflester",
        "Yodo"
      ],
-     "skill": [
+     "skills": [
        "JavaSE",
        "Knowledge Sharing"
      ],
@@ -276,7 +276,7 @@ User.find({}).remove()
        "Shufflester",
        "Yodo"
      ],
-     "skill": [
+     "skills": [
        "JavaSE",
        "Knowledge Sharing"
      ],

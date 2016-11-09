@@ -4,11 +4,8 @@ import {Router} from 'express';
 import * as controller from './employee.controller';
 import * as auth from '../../auth/auth.service';
 
-var router = new Router();
+var router = Router();
 
-
-
-var router = express.Router();
 router.get('/', auth.hasRole('admin') ,controller.index);
 router.get('/:id', auth.hasRole('admin'), controller.show);
 router.post('/', auth.hasRole('admin') , controller.create);
