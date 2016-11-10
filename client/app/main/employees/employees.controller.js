@@ -96,7 +96,7 @@
             templateUrl: 'app/main/employees/add/emp.dialog.html',
             parent: angular.element(document.body),
             targetEvent: ev,
-            clickOutsideToClose: true,
+            clickOutsideToClose: false,
             // fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
           })
           .then(function(answer) {
