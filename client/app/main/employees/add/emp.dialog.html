@@ -1,4 +1,4 @@
-<md-dialog aria-label="Mango (Fruit)" flex="70">
+<md-dialog aria-label="Employees" flex="70">
   <md-content flex="100">
     <form name="employeeForm" ng-submit="add(employee)" novalidate>
       <md-toolbar>
@@ -7,29 +7,19 @@
           <span flex></span>
         </div>
       </md-toolbar>
-      <!-- <md-input-container class="md-block">
-        <h2>/h2>
-        <!-- <input md-maxlength="30" required md-no-asterisk name="description" ng-model="project.description">
-          <div ng-messages="employeeForm.description.$error">
-            <div ng-message="required">This is required.</div>
-            <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
-          </div> -->
-      <!-- </md-input-container> -->
       <md-dialog-content>
         <div layout="row">
           <md-input-container flex="50">
             <label>First Name</label>
-            <input required name="empFirstName" ng-model="employee.first_name">
+            <input required name="first_name" ng-model="employee.first_name">
             <div ng-messages="employeeForm.first_name.$error">
-              <div ng-message="required">This is required.</div>
+              <ng-message when="required">This is required.</ng-message>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Last Name</label>
-            <input required name="empLastName" ng-model="employee.last_name">
-            <!-- <md-option value="app">Application</md-option>
-              <md-option value="web">Website</md-option> -->
+            <input required name="last_name" ng-model="employee.last_name">
             <div ng-messages="employeeForm.last_name.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -48,9 +38,7 @@
 
           <md-input-container flex="50">
             <label>Skills</label>
-            <input required name="empSkills" ng-model="employee.skills">
-            <!-- <md-option value="app">Application</md-option>
-                <md-option value="web">Website</md-option> -->
+            <input required name="skills" ng-model="employee.skills">
             <div ng-messages="employeeForm.skills.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -61,7 +49,7 @@
         <div layout="row">
           <md-input-container flex="50">
             <label>Recruiter</label>
-            <input required name="recruiter" ng-model="employee.recruiter">
+            <input required name="recruiter" name="recruiter" ng-model="employee.recruiter">
             <div ng-messages="employeeForm.recruiter.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -81,17 +69,17 @@
         <div layout="row">
           <md-input-container flex="50">
             <label>Salary</label>
-            <input required name="empSalary" ng-model="employee.salary">
+            <input required type="number" name="salary" ng-model="employee.salary" />
             <div ng-messages="employeeForm.salary.$error">
-              <div ng-message="required">This is required.</div>
+              <div ng-message="required">Required field. "Please enter a number"</div>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Insurance</label>
-            <input required name="empInsurance" ng-model="employee.insurance">
+            <input required type="number" name="insurance" ng-model="employee.insurance" />
             <div ng-messages="employeeForm.insurance.$error">
-              <div ng-message="required">This is required.</div>
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
@@ -101,17 +89,17 @@
         <div layout="row">
           <md-input-container flex="50">
             <label>relocation</label>
-            <input required name="empRelocation" ng-model="employee.relocation">
+            <input required type="number" name="relocation" ng-model="employee.relocation" />
             <div ng-messages="employeeForm.relocation.$error">
-              <div ng-message="required">This is required.</div>
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Immigration</label>
-            <input required name="empImmigration" ng-model="employee.immigration">
+            <input required type="number" name="immigration" ng-model="employee.immigration" />
             <div ng-messages="employeeForm.immigration.$error">
-              <div ng-message="required">This is required.</div>
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
@@ -121,17 +109,17 @@
         <div layout="row">
           <md-input-container flex="50">
             <label>Pay Vacation Cost</label>
-            <input required name="empVacationCost" ng-model="employee.pay_vacation_cost">
+            <input required type="number" name="pay_vacation_cost" ng-model="employee.pay_vacation_cost" />
             <div ng-messages="employeeForm.pay_vacation_cost.$error">
-              <div ng-message="required">This is required.</div>
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Ksquare hourly cost</label>
-            <input required name="ksquareHourlyCost" ng-model="employee.ksquare_hourly_cost">
+            <input required type="number" step="any" name="ksquare_hourly_cost" ng-model="employee.ksquare_hourly_cost" />
             <div ng-messages="employeeForm.ksquare_hourly_cost.$error">
-              <div ng-message="required">This is required.</div>
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
@@ -141,17 +129,17 @@
         <div layout="row">
           <md-input-container flex="50">
             <label>Target Bill Rate</label>
-            <input required name="empBillRate" ng-model="employee.target_bill_rate">
+            <input required type="number" name="target_bill_rate" ng-model="employee.target_bill_rate" />
             <div ng-messages="employeeForm.target_bill_rate.$error">
-              <div ng-message="required">This is required.</div>
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Client Bill Pay</label>
-            <input required name="empClientBillPay" ng-model="employee.client_bill_pay">
+            <input required type="number" name="client_bill_pay" ng-model="employee.client_bill_pay" />
             <div ng-messages="employeeForm.client_bill_pay.$error">
-              <div ng-message="required">This is required.</div>
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
@@ -162,11 +150,10 @@
               Cancel
             </md-button>
             <span flex></span>
-
-            <md-button type="submit">Save</md-button>
+            <md-button ng-disabled="!employeeForm.$valid" type="submit">Save</md-button>
 
           </md-input-container>
-
-          <md-dialog-content>
+        </md-dialog-actions>
+      </form>
   </md-content>
 </md-dialog>

@@ -1,5 +1,5 @@
 
-<div layout-margin>
+<md-content layout="column" flex layout-margin>
 
   <md-toolbar>
     <div class="md-toolbar-tools">
@@ -13,7 +13,7 @@
       </md-input-container>
       <span flex></span>
 
-      <md-button class="md-icon-button" aria-label="User" ng-show="showEdit">
+      <md-button class="md-icon-button" aria-label="User" ng-show="showEdit" ng-click="showEdits($event)">
         <md-tooltip>Edit</md-tooltip>
         <i class="material-icons">mode_edit</i>
       </md-button>
@@ -44,32 +44,36 @@
     </div>
   </md-toolbar>
 
+  <div layout="row">
+    <md-button class="md-raised md-primary" ng-click="showAdvanced($event)" ><i class="material-icons">person_add</i></md-button>
+  </div>
+  <br>
+  <br>
+  <div class="">
+    <mdt-table
 
-  <md-button class="md-raised md-primary" ng-click="showAdvanced($event)"><i class="material-icons">person_add</i></md-button>
+    paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
+    selected-row-callback="selectedRowCallback(rows)"
+    animate-sort-icon="true"
+    selectable-rows="true"
+    mdt-row="{
+                        'data': filteredItems,
+                        'table-row-id-key': '_id',
+                        'column-keys': [ 'first_name', 'last_name', 'client', 'skills', 'recruiter']
+                        }">
 
+      <mdt-header-row>
+        <!-- <mdt-column column-sort="true" contenteditable="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column> -->
+        <mdt-column column-sort="true" align-rule="left">First Name</mdt-column>
+        <mdt-column column-sort="true" align-rule="left">Last Name</mdt-column>
+        <mdt-column column-sort="true" align-rule="left">Client</mdt-column>
+        <mdt-column column-sort="true" align-rule="left">Skills</mdt-column>
+        <mdt-column column-sort="true" align-rule="left">Recruiter</mdt-column>
+        <!-- <mdt-column column-sort="true" align-rule="left">Revenue</mdt-column> -->
+      </mdt-header-row>
 
-  <mdt-table
+    </mdt-table>
+  </div>
 
-  paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}"
-  selected-row-callback="selectedRowCallback(rows)"
-  animate-sort-icon="true"
-  selectable-rows="true"
-  mdt-row="{
-                      'data': filteredItems,
-                      'table-row-id-key': '_id',
-                      'column-keys': [ 'first_name', 'last_name', 'client', 'skills', 'recruiter']
-                      }">
-
-    <mdt-header-row>
-      <!-- <mdt-column column-sort="true" contenteditable="true" align-rule="left" exclude-from-column-selector="true">ID</mdt-column> -->
-      <mdt-column column-sort="true" align-rule="left">First Name</mdt-column>
-      <mdt-column column-sort="true" align-rule="left">Last Name</mdt-column>
-      <mdt-column column-sort="true" align-rule="left">Client</mdt-column>
-      <mdt-column column-sort="true" align-rule="left">Skills</mdt-column>
-      <mdt-column column-sort="true" align-rule="left">Recruiter</mdt-column>
-      <!-- <mdt-column column-sort="true" align-rule="left">Revenue</mdt-column> -->
-    </mdt-header-row>
-
-  </mdt-table>
 
 </div>
