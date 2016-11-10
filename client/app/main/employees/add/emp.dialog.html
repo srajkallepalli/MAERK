@@ -1,4 +1,4 @@
-<md-dialog aria-label="Mango (Fruit)" flex="70">
+<md-dialog aria-label="Employees" flex="70">
   <md-content flex="100">
     <form name="employeeForm" ng-submit="add(employee)" novalidate>
       <md-toolbar>
@@ -11,17 +11,15 @@
         <div layout="row">
           <md-input-container flex="50">
             <label>First Name</label>
-            <input ng-required="required" name="firstName" ng-model="employee.first_name">
-            <div ng-messages="employeeForm.firstName.$error">
+            <input required name="first_name" ng-model="employee.first_name">
+            <div ng-messages="employeeForm.first_name.$error">
               <ng-message when="required">This is required.</ng-message>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Last Name</label>
-            <input required name="empLastName" ng-model="employee.last_name">
-            <!-- <md-option value="app">Application</md-option>
-              <md-option value="web">Website</md-option> -->
+            <input required name="last_name" ng-model="employee.last_name">
             <div ng-messages="employeeForm.last_name.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -40,7 +38,7 @@
 
           <md-input-container flex="50">
             <label>Skills</label>
-            <input required name="Skills" ng-model="employee.skills">
+            <input required name="skills" ng-model="employee.skills">
             <div ng-messages="employeeForm.skills.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -155,5 +153,7 @@
             <md-button ng-disabled="!employeeForm.$valid" type="submit">Save</md-button>
 
           </md-input-container>
+        </md-dialog-actions>
+      </form>
   </md-content>
 </md-dialog>

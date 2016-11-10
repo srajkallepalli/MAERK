@@ -123,6 +123,40 @@
         })
       }
 
+      $scope.showEdits = function(ev) {
+
+       var arrayObjectOf = function(myArray, searchTerm) {
+         for (var i = 0, len = myArray.length; i < len; i++) {
+           if (myArray[i]._id === searchTerm) return myArray[i];
+         }
+         return -1;
+       }
+       var selected = arrayObjectOf($scope.employeeList, $scope.selected[0]);
+       console.log($scope.employeeList);
+       $mdDialog.show({
+           controller: 'AddController',
+           controllerAs: 'employee',
+           locals: {
+             data: selected
+           },
+           templateUrl: 'app/main/employees/add/emp.dialog.html',
+           parent: angular.element(document.body),
+           targetEvent: ev,
+           clickOutsideToClose: true,
+           fullscreen: $scope.customFullscreen
+           // resolve: {
+           //   data: function() {
+           //     return selected;
+           //   }
+           // }
+         })
+         .then(function(answer) {
+           $scope.status = 'You said the information was "' + answer + '".';
+         }, function() {
+           $scope.status = 'You cancelled the dialog.';
+         })
+     };
+
       $scope.showDelete = function(ev) {
         var confirm = $mdDialog.confirm()
           .title('Are you sure you want to delete the employee?')
@@ -148,6 +182,7 @@
       //   };
 
       $scope.showEdit = false;
+      $scope.selected = [];
       $scope.showOptions = false;
 
       $scope.selectedRowCallback = function(rows) {
@@ -155,15 +190,18 @@
         if (rows == 0) {
           $scope.showEdit = false;
           $scope.showOptions = false;
+          $scope.selected = rows;
           console.log("0 rows selected");
         } else if (rows.length == 1) {
           $scope.showEdit = true;
           $scope.showOptions = true;
+          $scope.selected = rows;
           console.log("1 row selected");
         } else {
           $scope.showEdit = false;
           $scope.showOptions = true;
           console.log('nothing selected')
+          $scope.selected = rows;
           console.log(rows);
         }
       }
