@@ -3,7 +3,7 @@
   angular
       .module('maerkApp')
       .controller('AddController', AddController)
-      // .controller('skillsController', function($scope) {
+
       function AddController($scope, Employee, $mdDialog){
         $scope.add = function(newEmp){
           //console.log('hi')
@@ -13,9 +13,6 @@
         $scope.cancel = function() {
           $mdDialog.cancel();
         }
-        // $scope.edit = function(data) {
-        //   Employee.updateEmp(data)
-        // }
       }
 
  })();
