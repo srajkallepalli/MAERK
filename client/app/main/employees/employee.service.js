@@ -7,6 +7,13 @@
 
     var empResource = $resource('/api/employees/:id/:controller', {
       id: '@_id'
+    },{
+      update:{
+        method:'put',
+        params:{
+          id:'@_id'
+        }
+      }
     });
 
     var employees = empResource.query();
@@ -17,12 +24,20 @@
         new empResource(newEmp).$save().then(function(d) {
           employees.push(d);
         })
-      }
+      },
 
-    //   updateEmp : function(data){
-    //   empResource.update({_id:data._id},data).$promise.then(function(editEmp) {
-    //   });
-    // }
+      updateEmp : function(data){
+      empResource.update({_id:data._id},data).$promise.then(function(editEmp) {
+        //overwrite old object
+        for (var i = 0; i < emps.length; i++) {
+          if (emps[i]._id == newEmpUpdated._id) {
+            // emps[i].skill = newEmpUpdated.skill;
+            // emps[i].skill = newEmpUpdated.client;
+            emps[i] = newEmpUpdated;
+          }
+        }
+      });
+    }
   }
 }
 
@@ -40,11 +55,11 @@
 //        })
 //      }
 //
-//      var updateEmp = function(data) {
-//        // console.log(data);
-//        EmpResource.update({_id:data._id},data).$promise.then(function(editEmp) {
-//
-//        //   emps.push(editEmp);
-//        //   console.log(editEmp);
-//        });
-//      }
+     var updateEmp = function(data) {
+       console.log(data);
+       EmpResource.update({_id:data._id},data).$promise.then(function(editEmp) {
+
+         emps.push(editEmp);
+         console.log(editEmp);
+       });
+     }
