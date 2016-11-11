@@ -8,6 +8,12 @@ class LoginController {
 
     this.Auth = Auth;
     this.$state = $state;
+    Auth.isLoggedIn(_.noop)
+      .then(is => {
+        if(is){
+            $state.go('main');
+        }
+      });
   }
 
   login(form) {
