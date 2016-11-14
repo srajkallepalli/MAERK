@@ -31,8 +31,6 @@
         //overwrite old object
         for (var i = 0; i < employees.length; i++) {
           if (employees[i]._id == editEmp._id) {
-            // employees[i].skill = newEmpUpdated.skill;
-            // employees[i].skill = newEmpUpdated.client;
             employees[i] = editEmp;
           }
         }

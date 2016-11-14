@@ -83,7 +83,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "": false
+     "status": true
    }, {
      "first_name": "Jim",
      "last_name": "Carrey",

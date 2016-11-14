@@ -178,7 +178,7 @@
           for (var i = 0; i < $scope.selected.length; i ++) {
             for (var j = 0; j < $scope.employeeList.length; j ++) {
               if ($scope.selected[i] == $scope.employeeList[j]._id) {
-                $scope.employeeList[i].status = false;
+                $scope.employeeList[j].status = false;
                 Employee.updateEmp($scope.employeeList[j]);
               }
             }
