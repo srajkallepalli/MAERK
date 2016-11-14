@@ -1,6 +1,6 @@
 <md-dialog aria-label="Employee Details" flex="70">
 
-    <form ng-cloak name="employeeForm" ng-submit="add(employee)" novalidate>
+    <form ng-cloak id="editForm" name="employeeForm" ng-submit="add(employee,$event)" novalidate>
       <md-toolbar>
         <div class="md-toolbar-tools">
           <h2>Employee Details</h2>
@@ -158,7 +158,7 @@
               Cancel
             </md-button>
             <span flex></span>
-            <md-button ng-click= "showConfirmEdit($event)" class="md-primary md-raised" ng-disabled="!employeeForm.$valid" type="submit" >Save</md-button>
+            <md-button  class="md-primary md-raised" ng-disabled="!employeeForm.$valid" type="submit" >Save</md-button>
 
           </md-input-container>
         </md-dialog-actions>

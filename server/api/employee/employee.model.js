@@ -71,7 +71,7 @@ var employeeSchema = new mongoose.Schema({
    type : Number,
    required: true
  },
-    activate:{
+    status:{
       type:Boolean,
       default:true
     }
