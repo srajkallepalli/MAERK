@@ -1,15 +1,22 @@
-<md-dialog aria-label="Employees" flex="70">
-  <md-content flex="100">
-    <form name="employeeForm" ng-submit="add(employee)" novalidate>
+<md-dialog aria-label="Employee Details" flex="70">
+
+    <form ng-cloak id="editForm" name="employeeForm" ng-submit="add(employee,$event)" novalidate>
       <md-toolbar>
         <div class="md-toolbar-tools">
           <h2>Employee Details</h2>
           <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon aria-label="Close dialog">close</md-icon>
+        </md-button>
         </div>
+
       </md-toolbar>
+
       <md-dialog-content>
+        <h2 class="md-title">Personal Information</h2>
         <div layout="row">
-          <md-input-container flex="50">
+          <md-input-container class="md-block" flex="50">
+
             <label>First Name</label>
             <input required name="first_name" ng-model="employee.first_name">
             <div ng-messages="employeeForm.first_name.$error">
@@ -58,12 +65,13 @@
           <md-input-container flex="50">
             <label>Placement Type</label>
             <md-select name="type" ng-model="employee.placement_type" required>
-              <md-option value="Full Time">Full Time</md-option>
-              <md-option value="Part Time">Part Time</md-option>
+              <md-option value="full-time">Full ime</md-option>
+              <md-option value="part-time">Part Time</md-option>
               <md-option value="Project">Project</md-option>
             </md-select>
           </md-input-container>
         </div>
+        <h2 class="md-title">Payment Information</h2>
 
 
         <div layout="row">
@@ -146,14 +154,14 @@
         </div>
         <md-dialog-actions layout="row">
           <md-input-container flex="50">
-            <md-button ng-click="cancel()">
+            <md-button class="md-primary md-raised" ng-click="cancel()">
               Cancel
             </md-button>
             <span flex></span>
-            <md-button ng-disabled="!employeeForm.$valid" type="submit">Save</md-button>
+            <md-button  class="md-primary md-raised" ng-disabled="!employeeForm.$valid" type="submit" >Save</md-button>
 
           </md-input-container>
         </md-dialog-actions>
       </form>
-  </md-content>
+  <!-- </md-content> -->
 </md-dialog>

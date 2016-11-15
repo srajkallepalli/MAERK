@@ -83,7 +83,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": true
    }, {
      "first_name": "Jim",
      "last_name": "Carrey",
@@ -106,7 +106,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": false
    }, {
      "first_name": "Al",
      "last_name": "Pacino",
@@ -129,7 +129,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": false
    }, {
      "first_name": "Anthony",
      "last_name": "Hopkins",
@@ -152,7 +152,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": false
    }, {
      "first_name": "Samuel",
      "last_name": "Jackson",
@@ -175,7 +175,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": false
    }, {
      "first_name": "Denzel",
      "last_name": "Washington",
@@ -198,7 +198,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": false
    }, {
      "first_name": "Charlize",
      "last_name": "Theron",
@@ -221,7 +221,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": false
    }, {
      "first_name": "Ben",
      "last_name": "Affleck",
@@ -244,7 +244,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": false
    }, {
      "first_name": "Mark",
      "last_name": "Wahlberg",
@@ -267,7 +267,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": false
    }, {
      "first_name": "Matt",
      "last_name": "Damon",
@@ -290,7 +290,7 @@ User.find({}).remove()
      "ksquare_hourly_cost": 50,
      "target_bill_rate": 89969,
      "client_bill_pay": 106938,
-     "activate": false
+     "status": false
    })
       .then(() => {
         console.log('finished populating employee');

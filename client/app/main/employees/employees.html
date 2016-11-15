@@ -31,7 +31,7 @@
       </md-button>
       <md-menu-content width="4">
         <md-menu-item >
-          <md-button ng-click="">
+          <md-button ng-click="showConfirmAct($event)">
             <span md-menu-align-target>Activate</span> </md-button>
         </md-menu-item>
         <md-menu-item >
@@ -59,7 +59,7 @@
     mdt-row="{
                         'data': filteredItems,
                         'table-row-id-key': '_id',
-                        'column-keys': [ 'first_name', 'last_name', 'client', 'skills', 'recruiter']
+                        'column-keys': [ 'first_name', 'last_name', 'client', 'skills', 'recruiter', 'status']
                         }">
 
       <mdt-header-row>
@@ -69,7 +69,8 @@
         <mdt-column column-sort="true" align-rule="left">Client</mdt-column>
         <mdt-column column-sort="true" align-rule="left">Skills</mdt-column>
         <mdt-column column-sort="true" align-rule="left">Recruiter</mdt-column>
-        <!-- <mdt-column column-sort="true" align-rule="left">Revenue</mdt-column> -->
+        <mdt-column column-sort="true" align-rule="left">Status</mdt-column>
+
       </mdt-header-row>
 
     </mdt-table>
