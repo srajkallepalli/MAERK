@@ -1,62 +1,50 @@
+<section layout="row" flex>
 
-    <section layout="row" flex>
+  <md-sidenav class="md-sidenav-left " md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
 
-    <md-sidenav
-        class="md-sidenav-left "
-        md-component-id="left"
-        md-is-locked-open="$mdMedia('gt-md')"
-        md-whiteframe="4">
+    <md-toolbar class="md-theme-indigo">
+      <h1 class="md-toolbar-tools">Menu</h1>
+    </md-toolbar>
+    <md-content>
+      <!-- <md-subheader class="md-no-sticky">Secondary Menus</md-subheader> -->
+      <md-list-item ui-sref-active="highlight-nav" ui-sref="/">
+        <p>Reports</p>
+        <i class="material-icons">insert_chart</i>
+      </md-list-item>
 
-      <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools">Menu</h1>
-      </md-toolbar>
-      <md-content >
-        <!-- <md-subheader class="md-no-sticky">Secondary Menus</md-subheader> -->
- <md-list-item>
-   <p>Reports</p>
-   <i class="material-icons">assessment</i>
+      <md-list-item ui-sref-active="highlight-nav" ui-sref=".skills">
+        <p flex="10"></p>
+        <i class="material-icons ">blur_on</i>
+        <p> Skills </p>
+      </md-list-item>
 
-   <md-menu class="md-secondary">
-     <md-button class="md-icon-button">
-       <md-icon md-svg-icon="communication:message"></md-icon>
-     </md-button>
-     <md-menu-content width="4">
-       <md-menu-item>
-         <md-list-item ui-sref=".skills">
-           Skills
-         </md-list-item>
-       </md-menu-item>
-       <md-menu-item>
-         <md-button>
-           Clients
-         </md-button>
-       </md-menu-item>
-       <md-menu-divider></md-menu-divider>
-       <md-menu-item>
-         <md-button>
-           Recruiter
-         </md-button>
-       </md-menu-item>
-     </md-menu-content>
-   </md-menu>
+      <md-list-item ui-sref-active="highlight-nav" ui-sref=".clients">
+        <p flex="10"></p>
+        <i class="material-icons">blur_on</i>
+        <p> Clients </p>
+      </md-list-item>
 
- </md-list-item>
+      <md-list-item ui-sref-active="highlight-nav" ui-sref=".recruiter">
+        <p flex="10"></p>
+        <i class="material-icons">blur_on</i>
+        <p> Recruiter </p>
+      </md-list-item>
 
 
-          <md-list-item ui-sref=".employees">
-            <p> Employees </p>
-            <i class="material-icons">group</i>
-          </md-list-item>
-          <md-list-item  ng-click="null">
-            <p> Recruiter </p>
-            <i class="material-icons">person</i>
-          </md-list-item>
-          <md-list-item  ng-click="null">
-            <p> Register Quarter </p>
-            <i class="material-icons">file_download</i>
-          </md-list-item>
-      </md-content>
-    </md-sidenav>
-              <div flex ui-view>
-              <strong>Welcome</strong>
-            </div>
+      <md-list-item ui-sref-active="highlight-nav" ui-sref=".employees">
+        <p> Employees </p>
+        <i class="material-icons">group</i>
+      </md-list-item>
+      <md-list-item ui-sref-active="highlight-nav" ng-click="null">
+        <p> Recruiter </p>
+        <i class="material-icons">person</i>
+      </md-list-item>
+      <md-list-item ui-sref-active="highlight-nav" ng-click="null">
+        <p> Register Quarter </p>
+        <i class="material-icons">save</i>
+      </md-list-item>
+    </md-content>
+  </md-sidenav>
+  <div flex ui-view layout="column">
+    <!-- <strong>Welcome</strong> -->
+  </div>

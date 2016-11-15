@@ -1,154 +1,167 @@
+<md-dialog aria-label="Employee Details" flex="70">
 
-  <md-content layout-padding flex>
-    <form name="projectForm">
-
-      <md-input-container class="md-block">
-        <h2>Employee Details</h2>
-        <!-- <input md-maxlength="30" required md-no-asterisk name="description" ng-model="project.description">
-        <div ng-messages="projectForm.description.$error">
-          <div ng-message="required">This is required.</div>
-          <div ng-message="md-maxlength">The description must be less than 30 characters long.</div>
-        </div> -->
-      </md-input-container>
-      <div layout="row">
-        <md-input-container flex="50">
-          <label>First Name</label>
-          <input required name="clientFirstName" ng-model="project.clientFirstName">
-          <div ng-messages="projectForm.clientFirstName.$error">
-            <div ng-message="required">This is required.</div>
-          </div>
-        </md-input-container>
-
-        <md-input-container flex="50">
-          <label>Last Name</label>
-          <input required name="clientLastName" ng-model="project.clientLastName">
-          <!-- <md-option value="app">Application</md-option>
-          <md-option value="web">Website</md-option> -->
-          <div ng-messages="projectForm.clientLastName.$error">
-            <div ng-message="required">This is required.</div>
-
-          </md-input-container>
+    <form ng-cloak id="editForm" name="employeeForm" ng-submit="add(employee,$event)" novalidate>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2>Employee Details</h2>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon aria-label="Close dialog">close</md-icon>
+        </md-button>
         </div>
-      </div>
+
+      </md-toolbar>
+
+      <md-dialog-content>
+        <h2 class="md-title">Personal Information</h2>
+        <div layout="row">
+          <md-input-container class="md-block" flex="50">
+
+            <label>First Name</label>
+            <input required name="first_name" ng-model="employee.first_name">
+            <div ng-messages="employeeForm.first_name.$error">
+              <ng-message when="required">This is required.</ng-message>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex="50">
+            <label>Last Name</label>
+            <input required name="last_name" ng-model="employee.last_name">
+            <div ng-messages="employeeForm.last_name.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+
+        </div>
 
         <div layout="row">
           <md-input-container flex="50">
             <label>Client</label>
-            <input required name="clientFirstName" ng-model="project.clientFirstName">
-            <div ng-messages="projectForm.clientFirstName.$error">
+            <input required name="client" ng-model="employee.client">
+            <div ng-messages="employeeForm.client.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
-            <label>Skill</label>
-            <input required name="clientLastName" ng-model="project.clientLastName">
-            <!-- <md-option value="app">Application</md-option>
-            <md-option value="web">Website</md-option> -->
-            <div ng-messages="projectForm.clientLastName.$error">
+            <label>Skills</label>
+            <input required name="skills" ng-model="employee.skills">
+            <div ng-messages="employeeForm.skills.$error">
               <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
 
         <div layout="row">
           <md-input-container flex="50">
             <label>Recruiter</label>
-            <input required name="clientFirstName" ng-model="project.clientFirstName">
-            <div ng-messages="projectForm.clientFirstName.$error">
+            <input required name="recruiter" name="recruiter" ng-model="employee.recruiter">
+            <div ng-messages="employeeForm.recruiter.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
 
-            <md-input-container flex="50">
-          <label>Placement Type</label>
-          <md-select name="type" ng-model="placement.type" required>
-            <md-option value="app">Full Time</md-option>
-            <md-option value="web">Part Time</md-option>
-            <md-option value="web">Project</md-option>
-          </md-select>
-        </md-input-container>
-          </div>
+          <md-input-container flex="50">
+            <label>Placement Type</label>
+            <md-select name="type" ng-model="employee.placement_type" required>
+              <md-option value="full-time">Full ime</md-option>
+              <md-option value="part-time">Part Time</md-option>
+              <md-option value="Project">Project</md-option>
+            </md-select>
+          </md-input-container>
         </div>
+        <h2 class="md-title">Payment Information</h2>
 
 
         <div layout="row">
           <md-input-container flex="50">
             <label>Salary</label>
-            <input required name="clientFirstName" ng-model="project.clientFirstName">
-            <div ng-messages="projectForm.clientFirstName.$error">
-              <div ng-message="required">This is required.</div>
+            <input required type="number" name="salary" ng-model="employee.salary" />
+            <div ng-messages="employeeForm.salary.$error">
+              <div ng-message="required">Required field. "Please enter a number"</div>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Insurance</label>
-            <input required name="clientLastName" ng-model="project.clientLastName">
-            <div ng-messages="projectForm.clientLastName.$error">
-              <div ng-message="required">This is required.</div>
+            <input required type="number" name="insurance" ng-model="employee.insurance" />
+            <div ng-messages="employeeForm.insurance.$error">
+              <div ng-message="required">Required field. "Please enter a number</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
 
 
         <div layout="row">
           <md-input-container flex="50">
             <label>relocation</label>
-            <input required name="clientFirstName" ng-model="project.clientFirstName">
-            <div ng-messages="projectForm.clientFirstName.$error">
-              <div ng-message="required">This is required.</div>
+            <input required type="number" name="relocation" ng-model="employee.relocation" />
+            <div ng-messages="employeeForm.relocation.$error">
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Immigration</label>
-            <input required name="clientLastName" ng-model="project.clientLastName">
-            <div ng-messages="projectForm.clientLastName.$error">
-              <div ng-message="required">This is required.</div>
+            <input required type="number" name="immigration" ng-model="employee.immigration" />
+            <div ng-messages="employeeForm.immigration.$error">
+              <div ng-message="required">Required field. "Please enter a number</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
 
 
         <div layout="row">
           <md-input-container flex="50">
             <label>Pay Vacation Cost</label>
-            <input required name="clientFirstName" ng-model="project.clientFirstName">
-            <div ng-messages="projectForm.clientFirstName.$error">
-              <div ng-message="required">This is required.</div>
+            <input required type="number" name="pay_vacation_cost" ng-model="employee.pay_vacation_cost" />
+            <div ng-messages="employeeForm.pay_vacation_cost.$error">
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Ksquare hourly cost</label>
-            <input required name="clientLastName" ng-model="project.clientLastName">
-            <div ng-messages="projectForm.clientLastName.$error">
-              <div ng-message="required">This is required.</div>
+            <input required type="number" step="any" name="ksquare_hourly_cost" ng-model="employee.ksquare_hourly_cost" />
+            <div ng-messages="employeeForm.ksquare_hourly_cost.$error">
+              <div ng-message="required">Required field. "Please enter a number</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
 
 
         <div layout="row">
           <md-input-container flex="50">
             <label>Target Bill Rate</label>
-            <input required name="clientFirstName" ng-model="project.clientFirstName">
-            <div ng-messages="projectForm.clientFirstName.$error">
-              <div ng-message="required">This is required.</div>
+            <input required type="number" name="target_bill_rate" ng-model="employee.target_bill_rate" />
+            <div ng-messages="employeeForm.target_bill_rate.$error">
+              <div ng-message="required">Required field. "Please enter a number</div>
             </div>
           </md-input-container>
 
           <md-input-container flex="50">
             <label>Client Bill Pay</label>
-            <input required name="clientLastName" ng-model="project.clientLastName">
-            <div ng-messages="projectForm.clientLastName.$error">
-              <div ng-message="required">This is required.</div>
+            <input required type="number" name="client_bill_pay" ng-model="employee.client_bill_pay" />
+            <div ng-messages="employeeForm.client_bill_pay.$error">
+              <div ng-message="required">Required field. "Please enter a number</div>
+            </div>
+          </md-input-container>
 
-            </md-input-container>
-          </div>
         </div>
-      </md-content>
+        <md-dialog-actions layout="row">
+          <md-input-container flex="50">
+            <md-button class="md-primary md-raised" ng-click="cancel()">
+              Cancel
+            </md-button>
+            <span flex></span>
+            <md-button  class="md-primary md-raised" ng-disabled="!employeeForm.$valid" type="submit" >Save</md-button>
+
+          </md-input-container>
+        </md-dialog-actions>
+      </form>
+  <!-- </md-content> -->
+</md-dialog>
