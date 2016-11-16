@@ -22,4 +22,12 @@ angular.module('maerkApp')
      controller:'skillsController',
      controllerAs:'ctrl'
    })
+
+   .state("main.clients",{
+  url:"/clients",
+  templateUrl:"app/main/clients/clients.html",
+  controller:'clientsController',
+  controllerAs:'ctrl'
+})
+
   });
