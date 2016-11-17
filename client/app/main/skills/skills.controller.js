@@ -6,8 +6,7 @@
 
 
     function skillsController($scope, $log) {
-      $scope.labels = ["Business Analyst", "UI Developer", "Salesforce Admin", "UX Developer"];
-      $scope.data = [3000, 5000, 1000, 2000];
+
      this.year = ''; this.years = ['2016', '2015', '2014'];
 
   $scope.filteredItems = [{
@@ -74,54 +73,63 @@
   var reports = {
     'January': [{
 
-      skills: 'Tarun',
-      NoEmployees: '5',
-      revenue: 12000
-    }, {
-
-      skills: 'Shrusti',
-      NoEmployees: '4',
-      revenue: 2000
-
-    }, {
-      skills: 'Raju',
-      NoEmployees: '7',
-      revenue: 4000
-    }, {
-
-      skills: 'Lekha',
-      NoEmployees: '8',
+      skills: 'Business Analyst',
+      NoEmployees: '2',
       revenue: 10000
-    }, {
+    },
 
-      skills: 'Ashwini',
-      NoEmployees: '2',
-      revenue: 22000
-    }, {
-
-      skills: 'Harsha',
-      NoEmployees: '1',
-      revenue: 1200
-    }, {
-
-      skills: 'Vinni',
+    {
+      skills: 'UI Developer',
       NoEmployees: '8',
-      revenue: 4200
-    }, {
+      revenue: 20000
+    },
 
-      skills: 'Anusha',
-      NoEmployees: '8',
-      revenue: 6000
-    }, {
+    {
+      skills: 'Salesforce Admin',
+      NoEmployees: '6',
+      revenue: 80000
+    },
 
-      skills: 'Gnandeep',
-      NoEmployees: '9',
-      revenue: 2000
-    }, {
-
-      skills: 'Nitin',
+    {
+      skills: 'Business Analyst',
       NoEmployees: '2',
-      revenue: 3200
+      revenue: 10000
+    },
+
+    {
+      skills: 'UX Developer',
+      NoEmployees: '4',
+      revenue: 40000
+    },
+
+    {
+      skills: 'Business Analyst',
+      NoEmployees: '2',
+      revenue: 10000
+    },
+
+    {
+      skills: 'Business Analyst',
+      NoEmployees: '2',
+      revenue: 10000
+    },
+
+    {
+      skills: 'Business Analyst',
+      NoEmployees: '2',
+      revenue: 10000
+    },
+
+    {
+      skills: 'Business Analyst',
+      NoEmployees: '2',
+      revenue: 10000
+    },
+
+    {
+      skills: 'Business Analyst',
+      NoEmployees: '2',
+      revenue: 10000
     }],
     'February': [{
 
@@ -173,7 +181,8 @@
       skills: 'Nitin',
       NoEmployees: '14',
       revenue: 2200
-    }, ],
+    }],
+
     'March': [{
 
       skills: 'Donaldmarch',
@@ -224,21 +233,74 @@
       skills: 'Nitin',
       NoEmployees: '20',
       revenue: 1000
-    }, ]
+    }],
+
+    'April': [{
+
+      skills: 'Tarun',
+      NoEmployees: '5',
+      revenue: 12000
+    }, {
+
+      skills: 'Shrusti',
+      NoEmployees: '4',
+      revenue: 2000
+
+    }, {
+      skills: 'Raju',
+      NoEmployees: '7',
+      revenue: 4000
+    }, {
+
+      skills: 'Lekha',
+      NoEmployees: '8',
+      revenue: 10000
+    }, {
+
+      skills: 'Ashwini',
+      NoEmployees: '2',
+      revenue: 22000
+    }, {
+
+      skills: 'Harsha',
+      NoEmployees: '1',
+      revenue: 1200
+    }, {
+
+      skills: 'Vinni',
+      NoEmployees: '8',
+      revenue: 4200
+    }, {
+
+      skills: 'Anusha',
+      NoEmployees: '8',
+      revenue: 6000
+    }, {
+
+      skills: 'Gnandeep',
+      NoEmployees: '9',
+      revenue: 2000
+    }, {
+
+      skills: 'Nitin',
+      NoEmployees: '2',
+      revenue: 3200
+    }],
 
   }
   this.updateMonth = function(month) {
-    $scope.filteredItems = reports[month]
+    $scope.filteredItems = reports[month];
     $scope.data = [];
      $scope.labels = [];
      //for loop $scope.skillList
 
-     for (var i = 0; i < $scope.skillList.length; i++) {
-       console.log("tarun")
-     $scope.data.push( $scope.skillList[i].revenue);
-     $scope.labels.push( $scope.skillList[i].skills);
+     for (var i = 0; i < $scope.filteredItems.length; i++) {
+     $scope.data.push( $scope.filteredItems[i].revenue);
+     $scope.labels.push( $scope.filteredItems[i].skills);
        console.log($scope.data)
        }
   };
+  $scope.labels = ["Business Analyst", "UI Developer", "Salesforce Admin", "UX Developer"];
+  $scope.data = [3000, 5000, 1000, 2000];
 }
 })();
