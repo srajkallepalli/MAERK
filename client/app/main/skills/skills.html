@@ -25,9 +25,11 @@
 </div>
 
 <md-content class="md-padding" layout-xs="column" layout-gt-xs="row" flex>
-  <div flex layout="column" class="md-whiteframe-1dp">
 
-    <div class="">
+  <!-- <div flex layout="column" class="md-whiteframe-1dp"> -->
+  <md-content flex>
+    <md-toolbar> Table </md-toolbar>
+    <!-- <div class=""> -->
       <mdt-table paginated-rows="{isEnabled: true, rowsPerPageValues: [5,10,20]}" animate-sort-icon="true" mdt-row="{
                               data: filteredItems,
                               'table-row-id-key': '_id',
@@ -44,12 +46,20 @@
         </mdt-header-row>
 
       </mdt-table>
-    </div>
 
-  </div>
-  <div flex layout="column" class="md-whiteframe-1dp">
-    fdf
-  </div>
+    </md-content>
+
+  <!-- </div> -->
+  <md-content flex>
+    <!-- <div flex layout="column" class="md-whiteframe-1dp"> -->
+      <md-toolbar> Chart </md-toolbar>
+      <div layout = "row" layout-align = "center" flex>
+      <canvas flex= "60" id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
+</canvas>
+</div>
+    <!-- </div> -->
+  </md-content>
+</md-content>
   <!-- <form ng-submit="addTab(tTitle,tContent)" layout="column" class="md-padding" style="padding-top: 0;">
     <div layout="row" layout-sm="column">
       <div flex style="position: relative;">
